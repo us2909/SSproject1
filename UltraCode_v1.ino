@@ -27,6 +27,7 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration=pulseIn(echoPin, HIGH);
   distance =(duration/2)/29.1;
+  Serial.print(distance)
   delay(10);
  
 if(distance<20)  
