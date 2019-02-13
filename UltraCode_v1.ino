@@ -11,7 +11,7 @@ const int trigPin = A0;
 const int echoPin = A1;
 void setup() {
   
-  //Serial.begin(9600); 
+  Serial.begin(9600); 
 motorright.setSpeed(255);
 motorleft.setSpeed(255);
    pinMode(trigPin, OUTPUT);
@@ -27,12 +27,13 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration=pulseIn(echoPin, HIGH);
   distance =(duration/2)/29.1;
-  Serial.print(distance)
+  Serial.print(distance);
   delay(10);
  
 if(distance<20)  
  {
-  motorright.run(BACKWARD);             
+  motorright.run(BACKWARD); 
+  motorleft.run(FORWARD);            
  } 
  else if (distance>20)
  {
